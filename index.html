@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Esfuerzos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Esfuerzos</h1>
+        <h2 class="subtitle">calcula el esfuerzo para determinar la resistencia de tus materiales.</h2> <div class="form-group">
+            <label for="tipoEsfuerzo">Tipo de Esfuerzo:</label>
+            <select id="tipoEsfuerzo" onchange="mostrarImagenYFormula()">
+                <option value="compresion">Compresión</option>
+                <option value="flexion">Flexión</option>
+                <option value="torsion">Torsión</option>
+                <option value="corte">Corte o Cizalla</option>
+                <option value="traccion">Tracción</option>
+            </select>
+        </div>
+        <div id="imagenYFormula">
+            <img id="imagen-esfuerzo" src="" alt="Imagen del tipo de esfuerzo">
+            <p id="formula-text"></p> 
+        </div>
+        <div id="inputs"></div>
+        <button onclick="calcularEsfuerzo()">Calcular</button>
+        <button id="resetBtn" onclick="reiniciarCalculadora()">Reset</button> 
+        <div id="resultado"></div>
+        <div id="grafica"></div>
+        <div id="tablaResultados">
+            <h2>Resultados:</h2>
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>Tipo de Esfuerzo</th>
+                        <th>Variable 1</th> 
+                        <th>Variable 2</th>
+                        <th>Variable 3 (si aplica)</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+            <button id="descargarBtn" onclick="descargarResultados()">Descargar Resultados</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
